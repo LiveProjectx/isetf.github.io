@@ -673,3 +673,11 @@ PAGE JS
 	
 
 })(jQuery);
+
+
+
+//for donation
+function popupinfo()
+{
+	alert("Paytm no.: 9911868233\nUPI : 10230xxxxxx ");
+}
