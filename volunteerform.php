@@ -131,9 +131,9 @@
                         <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Events</a>
                         <div class="dropdown-menu">
                             <ul> 
-                                <li><a class="dropdown-item nav-link nav_item" href="pic.html">Photo</a></li> 
+                                <li><a class="dropdown-item nav-link nav_item" href="pic.html">Photos</a></li> 
                                 
-                                <li><a class="dropdown-item nav-link nav_item" href="vid.html">Video</a></li>
+                                <li><a class="dropdown-item nav-link nav_item" href="vid.html">Videos</a></li>
                                 
                             </ul>
                         </div>
