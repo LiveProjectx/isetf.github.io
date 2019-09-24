@@ -368,30 +368,30 @@ a {
 }
 
 .card2-9 .content2 {
-  background-color: rgb(245, 195, 214) !important;
-  border-radius: 3px;
+  background-color: rgb(223, 224, 236) !important;
+  border-radius: 1px;
 }
 .card2-9:before, .card2-9:after {
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .card2-9:before {
-  background-color: rgb(216, 48, 104) !important;
+  background-color: rgb(4, 2, 105) !important;
 }
 .card2-9 .title2, .card2-9:after {
-  background-color: rgb(112, 4, 46) !important;
+  background-color: rgb(15, 2, 44) !important;
 }
 .card2-10 .content2 {
-  background-color: rgb(66, 228, 214) !important;
+  background-color: rgb(223, 224, 236) !important;
   border-radius: 3px;
 }
 .card2-10:before, .card2-10:after {
   border-radius: 3px;
 }
 .card2-10:before {
-  background-color: rgb(105, 211, 170) !important;
+  background-color: rgb(4, 2, 105) !important;
 }
 .card2-10 .title2, .card2-10:after {
-  background-color: rgb(3, 56, 43) !important;
+  background-color: rgb(15, 2, 44) !important;
 }
 [class*='stacked--'] {
   position: relative;
