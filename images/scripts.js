@@ -679,5 +679,5 @@ PAGE JS
 //for donation
 function popupinfo()
 {
-	alert("Paytm no.: 9911868233\nUPI : 10230xxxxxx ");
+	alert("Payment can be made either by Demand Draft in the favor of Indian Scientific Education and Technology Foundation or through bank transfer into society’s current account name Indian Scientific Education and Technology Foundation, A/c No. 415501010125187, IFSC code: UBIN0541559, MICR code: 226026012, Union Bank of India, Amethi, Lucknow.\nD.D\nCheque\nCash\nNet Banking\nother");
 }
