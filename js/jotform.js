@@ -4003,6 +4003,8 @@ var JotForm = {
             return 'collapse';
         } else if ($$('#id_' + id + ' .form-product-item').length > 0) {
             type = $$('#id_' + id + ' .form-product-item')[0].select('input')[0].readAttribute('type').toLowerCase();
+        } else if ($$('#id_' + id + ' .product--subscription').length > 0) {
+            type = $$('#id_' + id + ' .product--subscription')[0].select('input')[0].readAttribute('type').toLowerCase();
         } else if ($$('#id_' + id + ' .form-address-table').length > 0) {
             type = 'address';
         } else if ($$('input[id^=input_' + id + '_]')[0] && $$('input[id^=input_' + id + '_]')[0].hasClassName('form-grading-input')) {
@@ -7721,7 +7723,8 @@ var JotForm = {
                   name: itemName,
                   unit_amount: Number(amount),
                   quantity: isSpecialPricing ? 1 : quantity,
-                  description: description.substr(0, 124)
+                  description: description.substr(0, 124),
+                  isSetupfee: isSetupFee
                 });
               }
           }
@@ -8314,92 +8317,10 @@ var JotForm = {
                 return;
             }
 
-            var formID = $$('form').first().readAttribute('id') + $$('form').first().readAttribute('name');
-
-            // Stripe forms for trial - sca forms --- will be remove soon.
-            var scaForms = [
-                "92240684220955","92240208040947","92107392840961","82977791484982","91902352137958","70695373980367","72373139928970","72962389752370","80351169529460",
-                "80731950474358","80903229804355","81095206035349","81114329384354","81165997284370","81364096117962","81984710808364","81992751749372","82352633784967",
-                "82456109484361","82552480320349","82563717795370","82663483984371","82731463995367","82865732584368","83025650684357","83324799146366","83370676127360",
-                "83393498490471","83466140349358","90183991663365","90284937400356","90435462815357","90442100149344","90485384617365","90797847658380","90922411929358",
-                "90994307715364","91323776681363","91355649644366","91413410523343","91424212787357","91434630986363","91542708601353","91562031701951","91718734955874",
-                "91762329187365","91886040808362","91964416029361","91974013744359","90316994357871","91728930322255","73176133143349","81781026384358","71664477628368",
-                "81072643178963","91830873419868","91345055715961","91774507315460","91832148517864","71356844190358","90416303114342","90544316651354","80723551128958",
-                "90482383149361","91292691522964","73232269480356","91853002381350","70006053654346","82632643365964","91801811515350","90231818137858","91321637443959",
-                "91561346008353","81352938333358","91321500044339","81614650020343","82822511684357","91122933423349","92041626209351","91963220822354","90483089786372",
-                "51292079741963","91784419617367","61443976390362","92041517543351","92034080167855","60592526975366","73253831827561","82383708582364","80282584055357",
-                "91541606381354","90982564815367","91855336851364","42654387911966","91203350081342","91784223345358","90425404186353","82685904316362","91693370917365",
-                "40054239625855","82362157376966","80844461969369","70603261883354","81724066643357","90073023581348","82195033349357","81193625284359","41473684843968",
-                "72964892579984","91983688122367","90825989815374","82753519784369","81594308019358","83043598784369","92033901587357","90083798635368","83444394994371",
-                "83162911279359","91713040481348","91616505858970","90632386322354","80033554484354","90164356614355","82056245845359","82263450284354","90932022151344",
-                "82763252684969","91894463881371","91832613408355","60144320112940","91832428122352","80435312175147","91403494786365","80663316856362","71143053459958",
-                "91455325786365","90293078086362","91952870645366","90896267729375","62774132210143","83513734658363","80294344883161","82746846615367","91282727229361",
-                "91982153529364","91464859081365","73426375107961","91205397551357","91543200923348","83193395771366","60621878932968","91764797201363","91485683151967",
-                "90863907381364","92063630217349","83454246863363","63196947967377","91616607258361","91455346387365","91633563958974","70186303879362","91462341944357",
-                "80525473812355","91292471658364","91532600381954","81223941253350","91181550917357","91453844908365","80465655504156","90575873658979","71563880870363",
-                "91452873501355","62943843128360","90412016751346","90576114517962","90714090359357","92107533503954","91774193023356","82626233884160",'83112462472350',
-                '60151563086957','91694487531367','70321096542349','92096804901459','91064897808471','92096316499469','91292209887367','90605220515345','90254058729967',
-                '91984025644362','60737794680367','42311765083956','90845035343354','71352967749976','72052631162345','91863600723355','90976615915368','91712524723353',
-                '83464073829364','91362412358354','92111869117356','82755320258357','82376566778375','73532310940347','91052623651350','91022363843351','82808192402354',
-                '82872741184362','91845103215349','91844176017964','30083764182352','91483193958370','73343912890359','90433675122352','92071884490867','51412621653346',
-                '91453279123356','81425789884374','80635536784365','90092479917367','90964282543362','91562966423363','90213011463340','82502094334350','83035787728974',
-                '91972412151352','91844443481360','91633322472352','81557185990368','73392478503361','92123393181352','91367935517467','92122566917966','81784153450356',
-                '81443368075359','71273775770363','61125097093353','40084774141956','70566324549361','90433597751363','70152493942356','91336238829364','91881796681374',
-                '80142267330346','91921795115360','73563394457366','92130983743359','51202978950964','50744856639973','90872914417362','91985021651357','73253028080348',
-                '90294747014357','73284342428963','90453017586964','91681881209363','82795965541371','41506322653347','71314616165351','90483687535368','83132007472347',
-                '81072643178963','91794883623370','91336545217356','60304429567962','60494949831367','92321588229361','91903172444354','92206142045345','91903172444354',
-                '92330769643968','73326694684974','91566034390154','41971950141958','82896744096171','91133583325151','90566035072151','53634905741963','60494949831367',
-                '80146553175153','92261778120153','81805389555165','90923941533156','80506668489168','91832905563159','92056148760156','62664586558977','83297387301967',
-                '51594720375964','81566551048965','91954220036149','80887030764260','92281175510149','50347945620961','91084226208150','91764870199169','80435312175147',
-                '91786040061150','90641089421152','92135882773971','71717172068155','91487259203158','91618427668166','83205864619160','91783722236158','91285349335160',
-                '63264795255162','90165880012956','90797981218169','91055758263159','80448046143150','60316064652147','73464623202147','61514777307156','91886407021154',
-                '91285634436159','21859240885968','51961235576158','71784735711967','71888273484168','90249226398162','91123610457955','81056959981169','83054858422157',
-                '53153532509957','91704281284962','90924747797173','91235721836963','91885316038160','80514706884159','81825505236153','92096833712158','90507926930158',
-                '30073316390951','70923943836162','72295144084154','62213685318961','82295035984163','90483345835160','91409052195153','71721300884149','51336352450953',
-                '90976824379980','91165459163158','91676050717965','72484850384161','81625816312151','81962067284161','82597840833973','91224871647159','83315945938974',
-                '92241484056961','91343404530144','91906766023157','92024164884156','42246687709163','71575370078158','70435765453157','72091415999972','81296042427153',
-                '82045280358153','60627998523165','81765871947171','91165273339157','91683572692166','92324409791158','92236543078965','72676470684165','91776146703967',
-                '91696651379978','91645561512961','83393498490471','72130140713945','53116439965968','91701220255445','70343513411443','81735840477364','91820898397475',
-                '91773194088468','83061831892460','82621529764160','80231263516448','91291089090459','42711559318962','83429211976463','83293853203457','51405902074953',
-                '51521143004942','80008290195453','90167820315453','92192306069458','73596194984173','91571644074459','91261657139461','91850812239459','91774507315460',
-                '91333069647462','91403292040445','92102570307851','92338568117464','60053519865964','92096316499469','72371280179862','82995691232972','91944917222461',
-                '92460616780460','92267553343460','81542765015455','91331111860445','70889233064966','91571255118456','92252695366466','82460739783468','91654752258465',
-                '91692056760462','81698239083468','43024431687958','61786273358972','60473840240348','53283659491365','51831892408965','61615297467364','62362482148356',
-                '60923765044356','60664183560355','71794135106354','62366999743879','20241858150','51182764074961','63135682112954','12962956370','60494281695364',
-                '71231884083355','60968677296174','60969314833160','51744046745963','60015974716962','61313409607350','60971153216149','61604618907358','70772302920955',
-                '13353434172','3623705624','61022900444342','70382758038967','71643882384364','61022346298353','70782519449366','60664897710364','60969180840159',
-                '71601554684357','52094333908962','70320682537353','60672600132343','63374981137362','70882549177368','71483125691357','70333190320947','70320763373351',
-                '60255565104349','60622063504950','70461858990367','70573307757361','70892506533358','43102122969955','63002844192349','71126111536849','71285938308970',
-                '71395079384366','40965163650961','70204524735349','70752510893357','71684186731362','52874133822961','60255759714361','60435302621342','60664450647358',
-                '61412051534342','71331660980354','71714042387354','53354244795361','71352958149364','71732326519356','53313326731953','61414188257357','61985976364374',
-                '62094608599368','62473221886864','70076730027349','71593679312363','60495210709353','61412798006354','61932687824366','62406790708359','62957094438367',
-                '63321278809864','71434677543967','40281928362355','43005285662957','51964049977977','52307290846356','60164240209344','60175047656963','60312956482962',
-                '61814445453961','61852587029363','62872863584369','70034374881355','70045216580348','70386086214355','70894371084159','70925968668376','71046305493352',
-                '31602187517957','41123303196141','41905069619966','42518499012153','43093482291355','50533381069959','51823276143352','53343129570958','60633166236352',
-                '60635231563350','61206277606959','61823506495965','62726075330351','62904604508354','62994822028362','70076592212351','70076737747365','70432407592353',
-                '71284381084154','71323704992963','71533365880359','71568771395167','31273069845358','40083813838962','41616590898367','43616036410344','50335846425355',
-                '50542711825350','51243285075352','51498221797365','51524369825966','52112709628353','52943474798978','53312110695952','60165905610349','60668392792974',
-                '60845086433357','61231974148356','61428132794862','61442385782360','61674958228368','61795047946368','61952682401354','62246441126348','62432614999365',
-                '62904147209354','62917068486973','63123753141346','70075988756372','70076188031351','70076532219352','70076962205354','70183727546360','70204854387358',
-                '70205079754356','70317555124653','70385214643353','70386082007351','70453213437349','70536362958364','70605720924352','70634906864363','70754856415362',
-                '71164129673357','71352755749971','71382951836969','71476488127365','71544985620361','71594313221348','71834142441349','60304429567962','60494949831367',
-                '81072643178963','82954872295371','90026750814352','82466795784376','91794883623370','71664477628368','90107143314343','83205835946969','90425404186353',
-                '82383708582364','91336545217356','70695373980367','90932022151344','83332111563346','91487423123354','73471216268963','91455325786365','82972868690375',
-                '82352633784967','82632643365964','82846598252369','83221508681354','91445805629363','82533949369371','70603261883354','82865846407368','90904610443350',
-                '80106512419347','91144203951349','71085880384362','82384151524353','91651647158363','91321637443959','91253492523355','81483990194366','82195033349357',
-                '82767215652361','90844297151360','90425024763352','82494443429363','90183991663365','81974900270357','82767277852371','73563394457366','72962389752370',
-                '82835819852369','82204083862353','82847520452357','83392763815365','83454895249371','91006471342347','91345055715961','80106641519351','82764736439369',
-                '91336238829364','92203250981351','72746394389372','72964892579984','83483195114357','70196712012649','83293831944364','90604434822352','82805314352351',
-                '91834491817365','82767549552370','90512840643352','91292691522964','82786648452370','82787572052363','82855954652369','83025650684357','81855546084364',
-                '90296095917367','90604551681355','90982564815367','90506113951350','91561346008353','92113526745355','81873098436367','90665466081361','90833629917367',
-                '91293139586972','81474525616359','91223657487970','82846231452355','90923929422361','91251334308349','83371403814352','90296124158357','83536140027349', '90944389212260'
-            ];
-
-            var isNewStripe = scaForms.indexOf(formID) > -1;
             var stripeV = new _StripeValidation();
             JotForm.stripe = stripeV;
 
-            if (!isNewStripe && typeof Stripe.setPublishableKey === 'function') { // Stripe v1
+            if (window.Stripe.version !== 3 && typeof Stripe.setPublishableKey === 'function') { // Stripe v1
                 Stripe.setPublishableKey(clean_pubkey);
                 stripeV.setAddress_qid(add_qid);
                 stripeV.init();
@@ -9701,37 +9622,27 @@ var JotForm = {
         });
     },
 
-    isCardinalSetupCompleted:  false,
-    isCardinalSCACompleted: false,
-    convertToMMFormat: function(month){
-        switch (month) {
-            case 'January':
-                return '01';
-            case 'February':
-                return '02';
-            case 'March':
-                return '03';
-            case 'April':
-                return '04';
-            case 'May':
-                return '05';
-            case 'June':
-                return '06';
-            case 'July':
-                return '07';
-            case 'August':
-                return '08';
-            case 'September':
-                return '09';
-            case 'October':
-                return '10';
-            case 'November':
-                return '11';
-            case "December":
-                return '12'
-        }
+    isCardinalValidationInitialized:  false,
+    savePaypalProLog: function(title, message) {
+        new Ajax.Jsonp(JotForm.server, {
+            parameters: {
+                action: 'saveStripeLog',
+                formId: $$('form').first().readAttribute('id'),
+                title: title,
+                message: message,
+                gateway: "PAYPALPROSCA"
+            },
+            evalJSON: 'force',
+            onComplete: function(t) {
+                console.log("Keep Log:", t);
+                  if (t.responseJSON) {
+                    console.log("Log saved");
+              } else {
+                  console.log("Log couldn't save");
+              }
+            }
+          });
     },
-
     /**
      *  Handles Paypal Pro payment methods
      *  and field validations
@@ -9773,114 +9684,110 @@ var JotForm = {
 
                     // if method is credit card there should be additonal flow for 3D security
                     var isSubscription = document.getElementById('paypalpro-payment-wrapper').getAttribute('data-paypalpro-paymenttype') === 'subscription';
-                    var isSandboxMode = document.getElementById('paypalpro-payment-wrapper').getAttribute('data-paypalpro-sandbox') === 'enabled';
+                    var is3DSecurityEnabled = document.getElementById('paypalpro-payment-wrapper').getAttribute('data-paypalpro-sca') === 'Yes';
 
-                    var newPaypalPro = [
+                    var isNewPaypalPro = [
                         "92531353320952", "92531462388967", "82977791484982", "92536034272959", "92454134837966"
-                    ];
-                    var isNewPaypalPro = newPaypalPro.indexOf($$('form').first().readAttribute('id')) > -1;
+                    ].indexOf($$('form').first().readAttribute('id')) > -1;
 
-                    if (JotForm.isCardinalSetupCompleted && $('input_' + paymentFieldId + '_paymentType_credit').checked && !isSubscription && isNewPaypalPro) {
+                    if (typeof Cardinal !== "undefined" && is3DSecurityEnabled && $('input_' + paymentFieldId + '_paymentType_credit').checked && !isSubscription && isNewPaypalPro) {
                         Event.stop(event);
                         JotForm.disableButtons();
 
-                        var jwt = document.getElementById('JWTContainer').value;
-                        var cardinalOrderNumber = document.getElementById('cardinalOrderNumber').value;
+                        var cardinalAPIkey = document.getElementById('paypalpro-payment-wrapper').getAttribute('data-paypalpro-cardinalapikey');
+                        var cardinalAPIidentifier = document.getElementById('paypalpro-payment-wrapper').getAttribute('data-paypalpro-cardinalapiindentifier');
+                        var cardinalOrgUnitID = document.getElementById('paypalpro-payment-wrapper').getAttribute('data-paypalpro-cardinalorgunitid');
 
-                        var accountNumber = $('input_' + paymentFieldId + '_cc_number').value;
-                        var securityCode = $('input_' + paymentFieldId + '_cc_ccv').value;
-                        var expirationMonth = JotForm.convertToMMFormat($('input_' + paymentFieldId + '_cc_exp_month').value);
-                        var expirationYear = $('input_' + paymentFieldId + '_cc_exp_year').value;
-
-                        var currencyCode = document.getElementById('paypalpro-payment-wrapper').getAttribute('data-paypalpro-currency');
-                        var amount = JotForm.paymentTotal * 100;
-
-                        Cardinal.start("cca", {
-                            OrderDetails: {
-                                OrderNumber: cardinalOrderNumber,
-                                CurrencyCode: currencyCode,
-                                Amount: amount
-                            },
-                            Consumer: {
-                                Account: {
-                                    AccountNumber: accountNumber,
-                                    ExpirationMonth: expirationMonth,
-                                    ExpirationYear: expirationYear,
-                                    CardCode: securityCode
-                                },
-                            },
-                            Token: {
-                                Token: jwt
-                            }
+                        var songBird = new songBirdInit();
+                        songBird.init({
+                            cardinalAPIkey: cardinalAPIkey,
+                            cardinalAPIidentifier: cardinalAPIidentifier,
+                            cardinalOrgUnitID: cardinalOrgUnitID
                         });
 
-                        Cardinal.on("payments.validated", function (data, jwt) {
-                            var form = (JotForm.forms[0] == undefined || typeof JotForm.forms[0] == "undefined" ) ? $($$('.jotform-form')[0].id) : JotForm.forms[0];
+                        if (!JotForm.isCardinalValidationInitialized) {
 
-                            JotForm.corrected($('creditCardTable'));
+                            JotForm.isCardinalValidationInitialized = true;
 
-                            switch(data.ActionCode){
-                              case "SUCCESS":
+                            Cardinal.on("payments.validated", function (data, jwt) {
+                                var form = (JotForm.forms[0] == undefined || typeof JotForm.forms[0] == "undefined" ) ? $($$('.jotform-form')[0].id) : JotForm.forms[0];
+    
+                                JotForm.corrected($('creditCardTable'));
+    
+                                switch(data.ActionCode){
+                                  case "SUCCESS":
+                                  case "NOACTION":
+    
+                                    var PAResStatus = data.Payment.ExtendedData.PAResStatus; //Optional
+                                    var Enrolled = data.Payment.ExtendedData.Enrolled; //Optional
+                                    var CAVV = data.Payment.ExtendedData.CAVV !== undefined ? data.Payment.ExtendedData.CAVV : "";
+                                    var ECIFlag = data.Payment.ExtendedData.ECIFlag !== undefined ? data.Payment.ExtendedData.ECIFlag : "";
+                                    var XID = data.Payment.ExtendedData.XID !== undefined ? data.Payment.ExtendedData.XID : "";
+                                    var DSTRANSACTIONID = data.Payment.ExtendedData.DSTransactionId !== undefined ? data.Payment.ExtendedData.DSTransactionId : "";
+                                    var THREEDSVERSION = data.Payment.ExtendedData.ThreeDSVersion !== undefined ?  data.Payment.ExtendedData.ThreeDSVersion : "";
 
-                                var PAResStatus = data.Payment.ExtendedData.PAResStatus; //Optional
-                                var Enrolled = data.Payment.ExtendedData.Enrolled; //Optional
-                                var CAVV = data.Payment.ExtendedData.CAVV;
-                                var ECIFlag = data.Payment.ExtendedData.ECIFlag;
-                                var XID = data.Payment.ExtendedData.XID;
-
-                                form.insert(new Element('input', {
-                                    name: "PAResStatus",
-                                    type: 'hidden',
-                                }).putValue(PAResStatus));
-
-
-                                form.insert(new Element('input', {
-                                    name: "Enrolled",
-                                    type: 'hidden',
-                                }).putValue(Enrolled));
-
-
-                                form.insert(new Element('input', {
-                                    name: "CAVV",
-                                    type: 'hidden',
-                                }).putValue(CAVV));
+                                    form.insert(new Element('input', {
+                                        name: "PAResStatus",
+                                        type: 'hidden',
+                                    }).putValue(PAResStatus));
 
 
-                                form.insert(new Element('input', {
-                                    name: "ECIFlag",
-                                    type: 'hidden',
-                                }).putValue(ECIFlag));
+                                    form.insert(new Element('input', {
+                                        name: "Enrolled",
+                                        type: 'hidden',
+                                    }).putValue(Enrolled));
 
 
-                                form.insert(new Element('input', {
-                                    name: "XID",
-                                    type: 'hidden',
-                                }).putValue(XID));
+                                    form.insert(new Element('input', {
+                                        name: "CAVV",
+                                        type: 'hidden',
+                                    }).putValue(CAVV));
 
-                                form.submit();
-                              break;
 
-                              case "NOACTION":
-                                 // For handling paypal test credit cards
-                                 if(isSandboxMode) {
+                                    form.insert(new Element('input', {
+                                        name: "ECIFlag",
+                                        type: 'hidden',
+                                    }).putValue(ECIFlag));
+
+
+                                    form.insert(new Element('input', {
+                                        name: "XID",
+                                        type: 'hidden',
+                                    }).putValue(XID));
+
+                                    form.insert(new Element('input', {
+                                        name: "DSTRANSACTIONID",
+                                        type: 'hidden',
+                                    }).putValue(DSTRANSACTIONID));
+
+                                    form.insert(new Element('input', {
+                                        name: "THREEDSVERSION",
+                                        type: 'hidden',
+                                    }).putValue(THREEDSVERSION));
+
+                                    // That does not meant that payment will succeed
+                                    JotForm.savePaypalProLog("FORM_SUCCESS", JSON.stringify(data));
+
                                     form.submit();
-                                 } else {
-                                    JotForm.errored($('creditCardTable'), "Failed Signature");
-                                    JotForm.enableButtons();
-                                 }
-                              break;
+                                  break;
 
-                              case "FAILURE":
-                                    JotForm.errored($('creditCardTable'), "Failed Authentication");
-                                    JotForm.enableButtons();
-                              break;
+                                  case "FAILURE":
+                                        JotForm.errored($('creditCardTable'), "Failed Authentication");
+                                        JotForm.enableButtons();
 
-                              case "ERROR":
-                                JotForm.errored($$('.paymentTypeRadios')[0], "Timeout Error");
-                                JotForm.enableButtons();
-                              break;
-                          }
-                          });
+                                        JotForm.savePaypalProLog("FORM_FAILURE", JSON.stringify(data));
+                                  break;
+
+                                  case "ERROR":
+                                    JotForm.errored($$('.paymentTypeRadios')[0], "Failed to connect payment service please try later");
+                                    JotForm.enableButtons();
+
+                                    JotForm.savePaypalProLog("FORM_ERROR", JSON.stringify(data));
+                                  break;
+                              }
+                              });
+                        }
+
                     }
 
                 }
@@ -12727,6 +12634,16 @@ var JotForm = {
     },
 
     setMatrixLayout: function(id, passive, mobileActiveQuestionOrder) {
+
+        //check if the element is visible
+        //if it is in Form Builder, setMatrixLayout function will continue.
+        //if it is in Publish, setMatrixLayout function won't continue for hidden questions. 
+        //When the question will be visible, setMatrixLayout function will continue.
+
+        if(!passive && !JotForm.isVisible('id_' + id)){  
+            return;
+        }
+               
         var matrix = document.getElementById("matrix_" + id);
         if (!$(matrix)) return;
         var desktopVersion = $(matrix).select('.forDesktop')[0];
@@ -12841,7 +12758,7 @@ var JotForm = {
                     } else {
                       var cellWidth = headerItems[i].getElementsByTagName('div')[0].getLayout().get('padding-box-width');
                     }
-                    cell.style.width = cellWidth + 'px';
+                    cell.style.minWidth = cellWidth + 'px';
                 }
                 if (headerItems && headerItems.length) {
                     headerItems[0].getElementsByTagName('div')[0].style.width = tableCells[0].getElementsByTagName('div')[0].getLayout().get('padding-box-width') + 'px';
