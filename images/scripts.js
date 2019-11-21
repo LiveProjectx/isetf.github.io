@@ -679,5 +679,5 @@ PAGE JS
 //for donation
 function popupinfo()
 {
-	alert("Detail of payment of membership fee-Membership fees can be paid either by net banking transfer (through NEFT) into society’s current account or through BHEEM APP. The detail is given below-\n Account Name: Indian Scientific Education and Technology Foundation \n A/c No.: 415501010125187, \n IFSC code: UBIN0541559, \n MICR code: 226026012, \n Bank Name: Union Bank of India, \n Branch: Amethi, Lucknow.\n BHEEM APP- 7985077353@upi");
+	alert("Detail of payment of membership fee-Membership fees can be paid either by net banking transfer (through NEFT) into society’s current account or through BHEEM APP. The detail is given below-\n Account Name: Indian Scientific Education and Technology Foundation \n A/c No.: 415501010125187, \n IFSC code: UBIN0541559, \n MICR code: 226026012, \n Bank Name: Union Bank of India, \n Branch: Amethi, Lucknow.\n BHIM APP- 7985077353@upi");
 }
