@@ -1,0 +1,37 @@
+---
+        #- export DEPLOYPATH=/home/<username>/public_html  # Add /<app_folder> if required
+        #- /bin/cp <file_name> $DEPLOYPATH                 #Copy specific file to destination from root
+        #- /bin/cp /<sub_folder>/<file_name> $DEPLOYPATH   #copy specific file from source sub folder
+        #- /bin cp * $DEPLOYPATH                           #copy all from root 
+        #- /bin cp /<sub_folder>/* $DEPLOYPATH             #copy all from sub folder root
+        #- /bin/cp -r * $DEPLOYPATH                        #copy all recursively to $DEPLOYPATH
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/repositories/isetf_github
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp about;.html $DEPLOYPATH
+    - /bin/cp AdvisoryMembers.html $DEPLOYPATH
+    - /bin/cp collaborators.html $DEPLOYPATH
+    - /bin/cp donate.html $DEPLOYPATH
+    - /bin/cp executiveMembers.html $DEPLOYPATH
+    - /bin/cp Founders.html $DEPLOYPATH
+    - /bin/cp member.html $DEPLOYPATH
+    - /bin/cp membership.html $DEPLOYPATH
+    - /bin/cp news.html $DEPLOYPATH
+    - /bin/cp pic.html $DEPLOYPATH
+    - /bin/cp research.html $DEPLOYPATH
+    - /bin/cp services.html $DEPLOYPATH
+    - /bin/cp vid.html $DEPLOYPATH
+    - /bin/cp favicon.ico $DEPLOYPATH
+
+    - /bin/cp /js/* $DEPLOYPATH
+    - /bin/cp /js/vendor/* $DEPLOYPATH
+    - /bin/cp /css/* $DEPLOYPATH 
+    - /bin/cp /fonts/* $DEPLOYPATH
+    - /bin/cp /images/* $DEPLOYPATH 
+    - /bin/cp /images/corona/* $DEPLOYPATH  
+
+    - /bin/cp /admin/upload/* $DEPLOYPATH
+    - /bin/cp /admin/upload/members/* $DEPLOYPATH
+    - /bin/cp /admin/upload/volunteer/* $DEPLOYPATH 
+
