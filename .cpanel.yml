@@ -27,13 +27,9 @@ deployment:
     - /bin/cp favicon.ico $DEPLOYPATH
 
     - /bin/cp -R js $DEPLOYPATH
-    #- /bin/cp -R /js/vendor/* $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH 
     - /bin/cp -R fonts $DEPLOYPATH
     - /bin/cp -R images $DEPLOYPATH 
-    #- /bin/cp -r /images/corona/* $DEPLOYPATH  
-
-    #- /bin/cp /admin/upload/* $DEPLOYPATH
-    #- /bin/cp /admin/upload/members/* $DEPLOYPATH
-    #- /bin/cp /admin/upload/volunteer/* $DEPLOYPATH 
+    - /bin/cp -R admin $DEPLOYPATH
+    
 
