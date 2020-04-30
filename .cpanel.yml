@@ -7,7 +7,7 @@
         #- /bin/cp -r * $DEPLOYPATH                        #copy all recursively to $DEPLOYPATH
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/repositories/isetf_github
+    - export DEPLOYPATH=/home/isetforg/repositories/isetf_github
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp about;.html $DEPLOYPATH
     - /bin/cp AdvisoryMembers.html $DEPLOYPATH
