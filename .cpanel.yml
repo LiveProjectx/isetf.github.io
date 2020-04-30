@@ -26,7 +26,7 @@ deployment:
     - /bin/cp volunteerform.html $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH
 
-    - /bin/cp -r /js/* $DEPLOYPATH
+    - /bin/cp /js/about.js $DEPLOYPATH
     - /bin/cp -r /js/vendor/* $DEPLOYPATH
     - /bin/cp -r /css/* $DEPLOYPATH 
     - /bin/cp -r /fonts/* $DEPLOYPATH
