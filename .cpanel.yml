@@ -26,12 +26,12 @@ deployment:
     - /bin/cp volunteerform.html $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH
 
-    - /bin/cp /js/* $DEPLOYPATH
-    - /bin/cp /js/vendor/* $DEPLOYPATH
-    - /bin/cp /css/* $DEPLOYPATH 
-    - /bin/cp /fonts/* $DEPLOYPATH
-    - /bin/cp /images/* $DEPLOYPATH 
-    - /bin/cp /images/corona/* $DEPLOYPATH  
+    - /bin/cp -r /js/* $DEPLOYPATH
+    - /bin/cp -r /js/vendor/* $DEPLOYPATH
+    - /bin/cp -r /css/* $DEPLOYPATH 
+    - /bin/cp -r /fonts/* $DEPLOYPATH
+    - /bin/cp -r /images/* $DEPLOYPATH 
+    - /bin/cp -r /images/corona/* $DEPLOYPATH  
 
     - /bin/cp /admin/upload/* $DEPLOYPATH
     - /bin/cp /admin/upload/members/* $DEPLOYPATH
