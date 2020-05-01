@@ -19,3 +19,28 @@ if(e.ctrlKey&&e.keyCode=='U'.charCodeAt(0)){return false;}
 if(e.ctrlKey&&e.shiftKey&&e.keyCode=='C'.charCodeAt(0)){return false;}}
 $("html").on("contextmenu",function(){return false;});});})(jQuery);function popupinfo()
 {alert("Detail of payment of membership fee-Membership fees can be paid either by net banking transfer (through NEFT) into society’s current account or through BHIM APP. The detail is given below-\n Account Name: Indian Scientific Education and Technology Foundation \n A/c No.: 415501010125187, \n IFSC code: UBIN0541559, \n MICR code: 226026012, \n Bank Name: Union Bank of India, \n Branch: Amethi, Lucknow.\n BHIM APP- 7985077353@upi");}
+
+jQuery(document).ready(function($){
+    var bArray = [];
+    var sArray = [20,40,30,50];
+    for (var i = 0; i < $('.bubbles').width(); i++) {
+        bArray.push(i);
+    }
+    function randomValue(arr) {return arr[Math.floor(Math.random() * arr.length)];}
+    function generateRandomColor(){
+    var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;}
+
+   setInterval(function(){
+    var size = randomValue(sArray);
+        $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+        
+        $('.individual-bubble').animate({
+            'background-color': generateRandomColor(),
+            'bottom': '100%',
+            'opacity' : '-=0.2'
+            
+        }, 3000, function(){
+            $(this).remove()
+        });}, 350);
+    });
