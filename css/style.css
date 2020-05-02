@@ -514,7 +514,7 @@ section.landing_section {
 	position: relative;
 	margin: 1em 0 0;
 	font-family: 'Luckiest Guy', cursive;
-	background: -webkit-linear-gradient(#feeb45, #ee0d0d);
+	background: -webkit-linear-gradient(#3a392f, #ee0d0d);
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
 	z-index: 2;
@@ -608,19 +608,29 @@ span#artist {
 
 img#b1 {
     position: absolute;
-	top: 29vh;
-	left: -50px;
-	width: 350px;
-	/* transform: rotate(-120deg); */
+    top: 24vh;
+    left: 0px;
 }
 
-img#b2 {
+img#bb {
     position: absolute;
-	top: 70vh;
-	left: 10%;
+    left: 0px;
+    transform: rotate(180deg);
+    bottom: 0%;
+    z-index: -1;
 }
-
-
+img#bc {
+    position: absolute;
+    right: -11%;
+    transform: rotate(90deg);
+    z-index: -1;
+}
+img#bc1 {
+    position: absolute;
+    left: -11%;
+    transform: rotate(-90deg);
+    z-index: -1;
+}
 img#b3 {
     position: absolute;
     top: 30vh;
@@ -628,12 +638,6 @@ img#b3 {
 	right: 10%;
 }
 
-img#b4 {
-    position: absolute;
-    top: 80vh;
-    /* width: 150px; */
-    left: 70%;
-}
 /* ======================================== */
 /* Drawing Event Ends */
 /* ======================================== */
