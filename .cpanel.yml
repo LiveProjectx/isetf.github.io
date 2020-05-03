@@ -25,6 +25,7 @@ deployment:
     - /bin/cp volunteer.html $DEPLOYPATH
     - /bin/cp volunteerform.html $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH
+    - /bin/cp submissions.ico $DEPLOYPATH
 
     - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH 
