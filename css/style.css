@@ -518,7 +518,23 @@ section.landing_section {
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
 	z-index: 2;
-	font-size: 70px;
+	font-size: xxx-large;
+}
+
+@media screen and (min-width: 992px) {
+	.bubbles h1 {
+		font-size: 5pc;
+	}
+	
+}
+
+@media screen and (max-width: 480px) {
+	.niti-img img {
+		float: right;
+		position: relative;
+		padding: 20px 0 40px;
+	}
+	
 }
 		
 .individual-bubble {
