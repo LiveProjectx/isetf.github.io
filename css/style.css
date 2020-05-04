@@ -521,6 +521,12 @@ section.landing_section {
 	font-size: xxx-large;
 }
 
+.bubbles h4 {
+	position: relative;
+	margin: 1em 0 0;
+	font-family: 'Luckiest Guy', cursive;
+}
+
 @media screen and (min-width: 992px) {
 	.bubbles h1 {
 		font-size: 5pc;
@@ -593,6 +599,11 @@ section.landing_section {
 .d_header h1{
 	font-family: 'Luckiest Guy', cursive;
 }
+.d_header h4{
+	font-family: 'Luckiest Guy', cursive;
+	text-align: center;
+	color: darkgreen;
+}
 
 h3#name {
     font-family: unset;
@@ -605,11 +616,12 @@ span#artist {
 }
 .d_card {
     border-radius: 10px;
-    background-color: burlywood;
+	background-color: rgb(4, 160, 4);
     box-shadow: 0 0 10px 3px #bbb6b6;
     border: solid;
-    border-color: burlywood;
-    border-width: thick;
+    border-color: darkgreen;
+	border-width: thick;
+	margin: 10px 0 10px 0;
 }
 .d_row {
     margin: 30px 0 30px 0;
