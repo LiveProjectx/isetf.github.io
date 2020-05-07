@@ -596,10 +596,36 @@ section.landing_section {
 	color: #2E7D32;
 }
 
+.d_header {
+    padding: 40px;
+    border: solid;
+    border-radius: 50px;
+	border-color: grey;
+	transition: background-color 1s, box-shadow 1s;
+}
+.d_header:hover {
+    padding: 40px;
+    border: solid;
+    border-radius: 50px;
+    border-color: grey;
+    background-color: #ffffff87;
+    box-shadow: 0px 0 15px 5px;
+}
 .d_header h1{
 	font-family: 'Luckiest Guy', cursive;
 	font-size: xxx-large;
 	text-align: center;
+	border-bottom: solid;
+	border-color: grey;
+	border-width: thick;
+}
+.d_header h2{
+	font-family: 'Luckiest Guy', cursive;
+	font-size: xxx-large;
+	text-align: center;
+	background: -webkit-linear-gradient(#3a392f, rgb(252, 19, 19));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 .d_header h4{
 	font-family: 'Luckiest Guy', cursive;
