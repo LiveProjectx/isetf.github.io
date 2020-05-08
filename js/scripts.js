@@ -1,3 +1,8 @@
+$(window).load(function() {
+	$(".loader_inner").fadeOut();
+	$(".loader").delay(400).fadeOut("slow");
+});
+
 (function($) {
     'use strict';
     var headerHeight = $(".header_wrap").height() - 10;

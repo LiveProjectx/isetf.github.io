@@ -1,9 +1,12 @@
 
 /*=============================================================
     CSS INDEX
-    =============================
-    01. GENERAL STYLE (body, link color, section-title, overlay, section-padding etc)
-    02. HEADER DESIGN
+	=============================
+		I. Corona Virus
+		II. Drawing Events
+		III. Preloader
+    	01. GENERAL STYLE (body, link color, section-title, overlay, section-padding etc)
+    	02. HEADER DESIGN
 		03. BANNER SECTION
 		04. ICON BOX SECTION
 		05. COURSE CATEGORIES SECTION
@@ -65,7 +68,6 @@
 	width: 100%;
 	height: 100%;
 	background-size: cover;
-	/* ?background-position: 0 0; */
 	-webkit-transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
 	transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
 	transition: transform calc(var(--d) * 1.5) var(--e);
@@ -99,11 +101,9 @@
   .card-donate:nth-child(3):before {
 	background-image: url('../admin/upload/paytm.jpg');
   }
-  /* .card-donate:nth-child(4):before {
-	background-image: url('../admin/uploads/bhim.jpg');
-  } */
+
   
-  .content {
+  .donate-content {
 	position: relative;
 	display: -webkit-box;
 	display: flex;
@@ -120,7 +120,7 @@
 	transition: transform var(--d) var(--e), -webkit-transform var(--d) var(--e);
 	z-index: 1;
   }
-  .content > * + * {
+  .donate-content > * + * {
 	margin-top: 1rem;
   }
   
@@ -172,11 +172,11 @@
 			  transform: translateY(0);
 	}
   
-	.content {
+	.donate-content {
 	  -webkit-transform: translateY(calc(100% - 4.5rem));
 			  transform: translateY(calc(100% - 4.5rem));
 	}
-	.content > *:not(.title) {
+	.donate-content > *:not(.title) {
 	  opacity: 0;
 	  -webkit-transform: translateY(1rem);
 			  transform: translateY(1rem);
@@ -201,13 +201,13 @@
 	  -webkit-transform: translateY(-50%);
 			  transform: translateY(-50%);
 	}
-	.card-donate:hover .content,
-	.card-donate:focus-within .content {
+	.card-donate:hover .donate-content,
+	.card-donate:focus-within .donate-content {
 	  -webkit-transform: translateY(0);
 			  transform: translateY(0);
 	}
-	.card-donate:hover .content > *:not(.title),
-	.card-donate:focus-within .content > *:not(.title) {
+	.card-donate:hover .donate-content > *:not(.title),
+	.card-donate:focus-within .donate-content > *:not(.title) {
 	  opacity: 1;
 	  -webkit-transform: translateY(0);
 			  transform: translateY(0);
@@ -216,274 +216,24 @@
 	}
   
 	.card-donate:focus-within:before, .card-donate:focus-within:after,
-	.card-donate:focus-within .content,
-	.card-donate:focus-within .content > *:not(.title) {
+	.card-donate:focus-within .donate-content,
+	.card-donate:focus-within .donate-content > *:not(.title) {
 	  -webkit-transition-duration: 0s;
 			  transition-duration: 0s;
 	}
   }
-  /* ======================================== */
-  /* Corona Virus Ends  */
-  /* ======================================== */
-
-
-/* =================================================== */
-/* Corona Virus  */
-:root {
-	--d: 700ms;
-	--e: cubic-bezier(0.19, 1, 0.22, 1);
-	--font-sans: 'Rubik', sans-serif;
-	--font-serif: 'Cardo', serif;
-  }
-@media (min-width: 600px) {
-	.page-content {
-	  grid-template-columns: repeat(2, 1fr);
-	}
-  }
-  @media (min-width: 800px) {
-	.page-content {
-	  grid-template-columns: repeat(4, 1fr);
-	}
-  }
-  
-  .card-donate {
-	position: relative;
-	display: -webkit-box;
-	display: flex;
-	-webkit-box-align: end;
-			align-items: flex-end;
-	overflow: hidden;
-	padding: 1rem;
-	width: 100%;
-	text-align: center;
-	color: whitesmoke;
-	background-color: whitesmoke;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-  }
-  @media (min-width: 600px) {
-	.card-donate {
-		height: 300px;
-		width: 300px;
-		margin: 0 10px 0 10px;
-	}
-  }
-  .card-donate:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	/* ?background-position: 0 0; */
-	-webkit-transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
-	transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
-	transition: transform calc(var(--d) * 1.5) var(--e);
-	transition: transform calc(var(--d) * 1.5) var(--e), -webkit-transform calc(var(--d) * 1.5) var(--e);
-	pointer-events: none;
-  }
-  .card-donate:after {
-	content: '';
-	/* display: block; */
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 200%;
-	pointer-events: none;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(11.7%, rgba(0, 0, 0, 0.009)), color-stop(22.1%, rgba(0, 0, 0, 0.034)), color-stop(31.2%, rgba(0, 0, 0, 0.072)), color-stop(39.4%, rgba(0, 0, 0, 0.123)), color-stop(46.6%, rgba(0, 0, 0, 0.182)), color-stop(53.1%, rgba(0, 0, 0, 0.249)), color-stop(58.9%, rgba(0, 0, 0, 0.32)), color-stop(64.3%, rgba(0, 0, 0, 0.394)), color-stop(69.3%, rgba(0, 0, 0, 0.468)), color-stop(74.1%, rgba(0, 0, 0, 0.54)), color-stop(78.8%, rgba(0, 0, 0, 0.607)), color-stop(83.6%, rgba(0, 0, 0, 0.668)), color-stop(88.7%, rgba(0, 0, 0, 0.721)), color-stop(94.1%, rgba(0, 0, 0, 0.762)), to(rgba(0, 0, 0, 0.79)));
-	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
-	-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
-	-webkit-transition: -webkit-transform calc(var(--d) * 2) var(--e);
-	transition: -webkit-transform calc(var(--d) * 2) var(--e);
-	transition: transform calc(var(--d) * 2) var(--e);
-	transition: transform calc(var(--d) * 2) var(--e), -webkit-transform calc(var(--d) * 2) var(--e);
-  }
-  .card-donate:nth-child(1):before {
-	background-image: url('../admin/upload/bhim.jpg');
-  }
-  .card-donate:nth-child(2):before {
-	background-image: url('../admin/upload/phonepay.jpg');
-  }
-  .card-donate:nth-child(3):before {
-	background-image: url('../admin/upload/neft.jpg');
-  }
-  /* .card-donate:nth-child(4):before {
-	background-image: url('../admin/uploads/bhim.jpg');
-  } */
-
-  .row-donate {
-    margin: 20px 0 20px 0;
-}
-.gallery-card {
-    box-shadow: 1px 5px 20px 0px grey;
-}
-a.nav-link.drop-donate {
-    color: #E64A19;
-    background-color: #ffd000;
-    border-radius: 50px;
-    height: 10px;
-    position: relative;
-    top: 11px;
-    width: 200px;
-    text-align: center;
-}
-.navbar-expand-lg .navbar-nav > li > .nav-link.drop-donate:hover {
-    color: #2E7D32;
-    box-shadow: 0 0 10px 0 #d7d7f4;
-}
-.navbar-expand-lg .navbar-nav > li > .nav-link.drop-donate {
-    font-size: 14px;
-    height: 31px;
-    top: inherit;
-}
-  .content span {
-    color: #bb0f0f;
-    font-style: normal;
-    font-family: sans-serif;
-    background-color: cornsilk;
-    border-radius: 10px;
-    padding: 0px 10px 0px 10px;
-    z-index: 10;
-	box-shadow: 1px 3px 20px 2px white;
-	border-bottom: 30px;
-}
-.banner_content {
-    text-align: center;
-    position: relative;
-    top: -90px;
+  a.nav-link.drop-donate {
+    background-color: #fd4c06;
+    border: solid;
+	border-radius: 50px;
+	transition: 2s box-shadow;
 }
 
-p.animation.animated.fadeInUp {
-    color: #d91515;
-    font-weight: bolder;
-    font-size: larger;
-}
-  .content {
-	position: relative;
-	display: -webkit-box;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-			flex-direction: column;
-	-webkit-box-align: center;
-			align-items: center;
-	width: 100%;
-	padding: 1rem;
-	-webkit-transition: -webkit-transform var(--d) var(--e);
-	transition: -webkit-transform var(--d) var(--e);
-	transition: transform var(--d) var(--e);
-	transition: transform var(--d) var(--e), -webkit-transform var(--d) var(--e);
-	z-index: 1;
-  }
-  .content > * + * {
-	margin-top: 1rem;
-  }
-  
-  .title {
-    font-size: 22.3px;
-    line-height: 0;
-    color: #0b0c01;
-}
-  
-  .copy {
-	font-family: var(--font-serif);
-	font-size: 1.125rem;
-	font-style: italic;
-	line-height: 1.35;
-	color: #ffffff;
-  }
-  
-  .heading-donate {
-    text-align: center;
-    margin: 10px 0 40px 0;
-}
-
-.heading-donate h1 {
-    color: #5c3f9a;
-}
-  .btn {
-	cursor: pointer;
-	margin-top: 1.5rem;
-	padding: 0.75rem 1.5rem;
-	font-size: 0.65rem;
-	font-weight: bold;
-	letter-spacing: 0.025rem;
-	text-transform: uppercase;
-	color: white;
-	background-color: black;
-	border: none;
-  }
-  .btn:hover {
-	background-color: #0d0d0d;
-  }
-  .btn:focus {
-	outline: 1px dashed yellow;
-	outline-offset: 3px;
-  }
-  
-  @media (hover: hover) and (min-width: 600px) {
-	.card-donate:after {
-	  -webkit-transform: translateY(0);
-			  transform: translateY(0);
-	}
-  
-	.content {
-	  -webkit-transform: translateY(calc(100% - 4.5rem));
-			  transform: translateY(calc(100% - 4.5rem));
-	}
-	.content > *:not(.title) {
-	  opacity: 0;
-	  -webkit-transform: translateY(1rem);
-			  transform: translateY(1rem);
-	  -webkit-transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
-	  transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
-	  transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-	  transition: transform var(--d) var(--e), opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
-	}
-  
-	.card-donate:hover,
-	.card-donate:focus-within {
-	  -webkit-box-align: center;
-			  align-items: center;
-	}
-	.card-donate:hover:before,
-	.card-donate:focus-within:before {
-	  -webkit-transform: translateY(-4%);
-			  transform: translateY(-4%);
-	}
-	.card-donate:hover:after,
-	.card-donate:focus-within:after {
-	  -webkit-transform: translateY(-50%);
-			  transform: translateY(-50%);
-	}
-	.card-donate:hover .content,
-	.card-donate:focus-within .content {
-	  -webkit-transform: translateY(0);
-			  transform: translateY(0);
-	}
-	.card-donate:hover .content > *:not(.title),
-	.card-donate:focus-within .content > *:not(.title) {
-	  opacity: 1;
-	  -webkit-transform: translateY(0);
-			  transform: translateY(0);
-	  -webkit-transition-delay: calc(var(--d) / 8);
-			  transition-delay: calc(var(--d) / 8);
-	}
-  
-	.card-donate:focus-within:before, .card:focus-within:after,
-	.card-donate:focus-within .content,
-	.card-donate:focus-within .content > *:not(.title) {
-	  -webkit-transition-duration: 0s;
-			  transition-duration: 0s;
-	}
-  }
 /* ======================================== */
 /* Corona Virus Ends  */
-/* ======================================== */  
-
 /* ======================================== */
+
+  /* ======================================== */
 /* Drawing Event Starts */
 /* ======================================== */
 
@@ -631,7 +381,7 @@ section.landing_section {
 	font-family: 'Luckiest Guy', cursive;
 	text-align: center;
 	background: -webkit-linear-gradient(#3a392f, #0c64e7);
-  	-webkit-background-clip: text;
+	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: xx-large;
 }
@@ -700,6 +450,35 @@ img#b3 {
 /* ======================================== */
 /* Drawing Event Ends */
 /* ======================================== */
+
+/* Preloader  */
+.loader {
+	background: none repeat scroll 0 0 #ffffff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999; 
+}
+
+.loader .loader_inner {
+	background-image: url("../images/preloader.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #fff;
+	height: 60px;
+	width: 60px;
+	margin-top: -30px;
+	margin-left: -30px;
+	left: 50%;
+	top: 50%;
+	position: absolute; 
+}
+/* Preloader Ends */
 
 
 /*===================================*
@@ -1518,7 +1297,7 @@ button:focus {
 	 -webkit-animation: ripple 1.8s infinite ;
     -moz-animation: ripple 1.8s infinite ;
     -o-animation: ripple 1.8s infinite ;
-    -ms-transition:ripple 1.8s infinite ;
+    transition:ripple 1.8s infinite ;
 	animation: ripple 1.8s infinite ;
 	background-color: #ffffff;
 	border-radius: 100%;
@@ -4636,8 +4415,7 @@ body.switch-open {
 .col-md-8.col-sm-1.even-info p {
     color: white;
 }
-element.style {
-}
+
 .mem-image {
     width: 29%;
     float: right;
