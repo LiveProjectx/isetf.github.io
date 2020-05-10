@@ -270,7 +270,9 @@ section.landing_section {
 	z-index: 2;
 	font-size: xxx-large;
 }
-
+.bubbles h2{
+	font-family: 'Luckiest Guy', cursive;
+}
 .bubbles h4 {
 	position: relative;
 	margin: 1em 0 0;
