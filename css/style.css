@@ -345,9 +345,32 @@ section.landing_section {
 	background-color: #A5D6A7;
 	color: #2E7D32;
 }
+.wnr-img img {
+    border-radius: 50%;
+    width: 31%;
+    border: solid;
+    border-color: white;
+	border-width: thick;
+	position: relative;
+    top: -92px;
+    left: -92px;
+}
+.wnr-img {
+    position: absolute;
+}
 
+.certify{
+	text-align: center;
+}
+.hedd h1{
+	font-family: 'Luckiest Guy', cursive;
+}
+.ctnt h4{
+	text-align: center;
+}
 .d_header {
-    padding: 40px;
+	padding: 40px;
+	margin: 25px;
     border: solid;
     border-radius: 50px;
 	border-color: grey;
