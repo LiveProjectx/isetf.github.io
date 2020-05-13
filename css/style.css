@@ -4402,6 +4402,11 @@ body.switch-open {
 }
 }
 
+.mem-image img {
+    border: solid;
+    border-color: white;
+    border-width: thick;
+}
 .card-odd {
     padding: 20px;
     margin-top: 20px;
