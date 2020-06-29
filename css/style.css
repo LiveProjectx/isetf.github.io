@@ -349,18 +349,11 @@ section.landing_section {
 }
 .wnr-img img {
     border-radius: 50%;
-    width: 31%;
     border: solid;
-    border-color: white;
+    border-color: #000000;
 	border-width: thick;
 	position: relative;
-    top: -92px;
-    left: -92px;
 }
-.wnr-img {
-    position: absolute;
-}
-
 .certify{
 	text-align: center;
 }
@@ -372,17 +365,16 @@ section.landing_section {
 }
 .d_header {
 	padding: 40px;
-	margin: 25px;
     border: solid;
     border-radius: 50px;
-	border-color: grey;
+	border-color: #efefef;
 	transition: background-color 1s, box-shadow 1s;
 }
 .d_header:hover {
     padding: 40px;
     border: solid;
     border-radius: 50px;
-    border-color: grey;
+    border-color: #efefef;
     background-color: #ffffff87;
     box-shadow: 0px 0 15px 5px;
 }
@@ -391,7 +383,7 @@ section.landing_section {
 	font-size: xxx-large;
 	text-align: center;
 	border-bottom: solid;
-	border-color: grey;
+	border-color: #efefef;
 	border-width: thick;
 }
 .d_header h2{
@@ -2895,8 +2887,8 @@ footer .widget_title {
 	position: relative;
 }
 .bottom_footer {
-	padding: 1px 0;
-	position: relative;
+    background-color: #051d2e;
+    text-align: center;
 }
 .footer_link li {
 	display: inline-block;
@@ -2906,6 +2898,34 @@ footer .widget_title {
 	font-size: 14px;
 	padding: 0 5px;
 	color: #888;
+}
+.fb-img img {
+	margin: 10px 0;
+	border: solid;
+	border-color: #ffffff;
+}
+button.fb-btn {
+    position: absolute;
+    background-color:  #3b5998;
+    color: #ffffff;
+    left: 30px;
+    bottom: 25px;
+}
+
+button.fb-btn:hover {
+    background-color: #ffffff;
+    color:  #3b5998 ;
+}
+i.fb-icon {
+    position: absolute;
+    font-size: xx-large;
+    color: #ffffff;
+    background-color: #3b5998;
+    width: 35px;
+    right: 70px;
+    bottom: 25px;
+    text-align: center;
+    border-radius: 6px;
 }
 .post_img {
 	float: left;
@@ -4546,3 +4566,43 @@ body.switch-open {
     font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
     font-size:14px;
 }
+
+
+.social_media{
+	position: fixed;
+	top: 50%;
+	z-index: 10;
+}
+.social_media a {
+	text-decoration: none;
+	width: 40px;
+	display: block;
+	
+  }
+a .flex-container {
+	position: relative;
+	padding: 0;
+	margin: 10px 0 0 0;
+	list-style: none;
+	display: flex;
+	height: 45px;
+	width: 150px;
+	justify-content: space-around;
+	left: -110px;
+	transition: left 1s;
+  }
+  a .flex-container:hover {
+	left: -10px;
+  }
+  a .flex-container .flex-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+  }
+  a .flex-container .flex-item h4 {
+	font-weight: bold;
+	font-size: 16px;
+	color: #ffffff;
+  }
+  

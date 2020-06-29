@@ -303,9 +303,11 @@ a {
 .color-2 {
     background-color: #d5be58;
     padding: 60px;
+    color: #000000;
 }
 
 .color-1 {
     background-color: #eaca3e;
     padding: 60px;
+    color: #000000;
   }
