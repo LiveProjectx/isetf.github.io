@@ -4425,26 +4425,11 @@ body.switch-open {
 }
 
 .mem-image img {
+	position:relative;
+	margin-top:50px;
     border: solid;
     border-color: white;
     border-width: thick;
-}
-.card-odd {
-    padding: 20px;
-    margin-top: 20px;
-    border: solid;
-    border-radius: 20px;
-    background: #E2CF7A;
-    margin-bottom: 20px;
-}
-
-.card-even {
-    padding: 20px;
-    border: solid;
-    border-radius: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background: #003153;
 }
 .card-even p {
     color: white;
@@ -4468,14 +4453,16 @@ body.switch-open {
     color: white;
 }
 
+.hidden{
+	display:none;
+}
 .mem-image {
-    width: 29%;
     float: right;
-    height: 322px;
-    margin-bottom: 20px;
+	margin-bottom: 30px;
+	
 }
 .mem-image img {
-    border-radius: 20px;
+    border-radius: 50%;
 }
 .info-links{
   color: blue;
@@ -4540,7 +4527,7 @@ body.switch-open {
     border: solid;
     border-color: #ffffff;
 }
-.col-md-4.col-sm-12.re-card {
+.col-md-4.col-sm-4.re-card {
     margin-right: 10px;
     margin-left: 10px;
 }
