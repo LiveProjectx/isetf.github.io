@@ -561,4 +561,6 @@ jQuery(document).ready(function($){
         }, 3000, function(){
             $(this).remove()
         });}, 350);
-    });
+	});
+	
+	

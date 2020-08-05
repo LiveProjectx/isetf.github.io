@@ -4423,11 +4423,31 @@ body.switch-open {
 	transform: translateX(-270px);
 }
 }
+div.mem:hover{
+	transform: scale(1.1);
+	background-color:#003153;
+	box-shadow: 10px 10px 5px;
+	border-radius: 15%;
+	padding-bottom:5px;
+	margin-bottom:25px;
+	margin-top:25px;
+	color: white;
+
+}
+
+.mem-name{
+	text-align: center;
+	margin-bottom:15px;
+}
 
 .mem-image img {
+	height:220px;
+	width:220px;
 	position:relative;
-	margin-top:50px;
-    border: solid;
+	margin-right:17px;
+	margin-top:20px;
+	border: solid;
+	border-radius: 50%;
     border-color: white;
     border-width: thick;
 }
@@ -4461,9 +4481,7 @@ body.switch-open {
 	margin-bottom: 30px;
 	
 }
-.mem-image img {
-    border-radius: 50%;
-}
+
 .info-links{
   color: blue;
 }
