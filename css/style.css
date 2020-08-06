@@ -4425,9 +4425,9 @@ body.switch-open {
 }
 
 div.mem{
-	background-color: #e3f4ff;
+	background-color: rgb(245,245,245);
     border: solid;
-    border-color: #caebff;
+    border-color: rgb(160,160,160);
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 25px;
@@ -4456,13 +4456,15 @@ div.mem:hover{
 
 .mem-image {
     margin-bottom: 30px;
-    position: relative;
+	position: relative;
 }
 
 .mem-image img {
+	width:220px;
+	height:220px;
     border: solid;
     padding: 5px;
-    box-shadow: 0 0 7px 2px skyblue;
+	box-shadow: 0 0 7px 2px rgb(160,160,160);
     border-radius: 50%;
     border-color: white;
     position: relative;
