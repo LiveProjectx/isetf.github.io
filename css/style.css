@@ -4423,33 +4423,49 @@ body.switch-open {
 	transform: translateX(-270px);
 }
 }
-div.mem:hover{
-	transform: scale(1.1);
-	background-color:#003153;
-	box-shadow: 10px 10px 5px;
-	border-radius: 15%;
-	padding-bottom:5px;
-	margin-bottom:25px;
-	margin-top:25px;
-	color: white;
 
+div.mem{
+	background-color: #e3f4ff;
+    border: solid;
+    border-color: #caebff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    color: white;
+	-webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
-.mem-name{
-	text-align: center;
-	margin-bottom:15px;
+div.mem:hover{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	box-shadow: 0px 5px 15px 5px #cacaca;;
+}
+
+.mem-name {
+    text-align: center;
+    margin-bottom: 15px;
+    color: rgb(18, 18, 19);
+    font-family: sans-serif;
+    font-size: larger;
+    position: relative;
+}
+
+.mem-image {
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .mem-image img {
-	height:220px;
-	width:220px;
-	position:relative;
-	margin-right:17px;
-	margin-top:20px;
-	border: solid;
-	border-radius: 50%;
+    border: solid;
+    padding: 5px;
+    box-shadow: 0 0 7px 2px skyblue;
+    border-radius: 50%;
     border-color: white;
-    border-width: thick;
+    position: relative;
 }
 .card-even p {
     color: white;
@@ -4475,11 +4491,6 @@ div.mem:hover{
 
 .hidden{
 	display:none;
-}
-.mem-image {
-    float: right;
-	margin-bottom: 30px;
-	
 }
 
 .info-links{
