@@ -4423,7 +4423,7 @@ body.switch-open {
 	transform: translateX(-270px);
 }
 }
-div.mem:hover{
+.mem:hover{
 	transform: scale(1.1);
 	background-color:#003153;
 	box-shadow: 10px 10px 5px;
@@ -4432,8 +4432,9 @@ div.mem:hover{
 	margin-bottom:25px;
 	margin-top:25px;
 	color: white;
-
 }
+
+
 
 .mem-name{
 	text-align: center;
