@@ -77,9 +77,6 @@ p.over-para {
     color: #000000;
 }
 
-.container.overview-container {
-    text-align: center;
-}
 
 .card1 .header1:after {
   content: "";
