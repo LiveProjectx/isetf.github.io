@@ -223,9 +223,7 @@
 	}
   }
   a.nav-link.drop-donate {
-    background-color: #fd4c06;
-    border: solid;
-	border-radius: 50px;
+    background-color: #8f2d56;
 	transition: 2s box-shadow;
 }
 
@@ -1491,11 +1489,6 @@ section.banner_section.p-0.full_screen {
     z-index: -1;
 }
 
-ul.navbar-nav {
-    position: relative;
-    float: left;
-    left:12%;
-}
 .navbar {
 
 	    padding: 0;
@@ -4623,4 +4616,13 @@ a .flex-container {
 	font-size: 16px;
 	color: #ffffff;
   }
+
+  .awrd-details {
+    margin: 20px 0 20px 0;
+    background: #efe5e6;
+    padding: 20px;
+}
+.awrd-heading {
+    margin: 10px 0 10px 0;
+}
   
