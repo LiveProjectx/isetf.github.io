@@ -27,6 +27,8 @@ deployment:
     - /bin/cp favicon.ico $DEPLOYPATH
     - /bin/cp submissions.html $DEPLOYPATH
     - /bin/cp awards.html $DEPLOYPATH
+    - /bin/cp covidevents.html $DEPLOYPATH
+
 
     - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH 
