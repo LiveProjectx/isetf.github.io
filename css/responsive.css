@@ -917,3 +917,19 @@ nav.navbar {
 	width: 100%;
 }
 }
+
+/*Advisory Members
+@media only screen and (max-width: 450px)
+{
+	.mem-image img{
+		display: block;
+		margin: 0 auto;
+	}
+}
+@media only screen and (max-width: 800px)
+{
+	.mem-image img{
+		display: block;
+		margin: 0 auto;
+	}
+}*/
