@@ -4654,8 +4654,8 @@ a .flex-container {
 /* fix blank or flashing items on carousel */
 .owl-carousel .item {
   position: relative;
-  height: 400px;
-  width: 385px;
+  height: 40%;
+  width: 95%;
   z-index: 100; 
   margin:10px;
   border:solid 2px gray;
