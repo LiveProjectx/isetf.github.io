@@ -4643,3 +4643,70 @@ a .flex-container {
     margin: 10px 0 10px 0;
 }
   
+/*Event header*/
+.carousel-wrap {
+  margin: 50px auto;
+  padding: 0 5%;
+  width: 93%;
+  position: relative;
+}
+
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  z-index: 100; 
+  margin:10px 0 ;
+  box-shadow: 2px 4px 9px rgb(208, 202, 202);
+  -webkit-backface-visibility: hidden; 
+}
+
+/* end fix */
+.owl-nav > div {
+  margin-top: -30px;
+  position: absolute;
+  top: 50%;
+  color: #C1C1C1;
+}
+
+.owl-nav i {
+  font-size: 52px;
+}
+
+.owl-nav .owl-prev {
+  left: -30px;
+}
+
+.owl-nav .owl-next {
+  right: -30px;
+}  
+
+@media only screen and (max-width:450px)
+{
+	  
+	.owl-carousel .item {
+		position: relative;
+		height:50%;
+		width: 95%;
+		z-index: 100; 
+		margin:10px 0 ;
+		box-shadow: 2px 4px 9px rgb(208, 202, 202);
+		-webkit-backface-visibility: hidden; 
+	  }
+	  
+}
+@media only screen and (min-width:500px) and (max-width:800px)
+{
+	  
+	.owl-carousel .item {
+		position: relative;
+		height:40%;
+		width: 95%;
+		z-index: 100; 
+		margin:10px 0 ;
+		box-shadow: 2px 4px 9px rgb(208, 202, 202);
+		-webkit-backface-visibility: hidden; 
+	  }
+	  
+}
