@@ -4659,6 +4659,7 @@ a .flex-container {
   z-index: 100; 
   margin:10px;
   border:solid 2px gray;
+  border-radius: 3%;
   padding:10px;
   box-shadow: 2px 4px 9px rgb(208, 202, 202);
   -webkit-backface-visibility: hidden; 
@@ -4695,6 +4696,7 @@ a .flex-container {
 		margin:10px;
 		border:solid 2px gray;
 		padding:10px;
+		border-radius: 3%;
 	    box-shadow: 2px 4px 9px rgb(208, 202, 202);
 		-webkit-backface-visibility: hidden; 
 	  }
@@ -4711,6 +4713,7 @@ a .flex-container {
 		margin:10px;
 		border:solid 2px gray;
 		padding:10px;
+		border-radius: 3%;
 	    box-shadow: 2px 4px 9px rgb(208, 202, 202);
 		-webkit-backface-visibility: hidden; 
 	  }
