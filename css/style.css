@@ -4655,9 +4655,11 @@ a .flex-container {
 .owl-carousel .item {
   position: relative;
   height: 400px;
-  width: 400px;
+  width: 385px;
   z-index: 100; 
-  margin:10px 0 ;
+  margin:10px;
+  border:solid 2px gray;
+  padding:10px;
   box-shadow: 2px 4px 9px rgb(208, 202, 202);
   -webkit-backface-visibility: hidden; 
 }
@@ -4690,8 +4692,10 @@ a .flex-container {
 		height:50%;
 		width: 95%;
 		z-index: 100; 
-		margin:10px 0 ;
-		box-shadow: 2px 4px 9px rgb(208, 202, 202);
+		margin:10px;
+		border:solid 2px gray;
+		padding:10px;
+	    box-shadow: 2px 4px 9px rgb(208, 202, 202);
 		-webkit-backface-visibility: hidden; 
 	  }
 	  
@@ -4704,8 +4708,10 @@ a .flex-container {
 		height:40%;
 		width: 95%;
 		z-index: 100; 
-		margin:10px 0 ;
-		box-shadow: 2px 4px 9px rgb(208, 202, 202);
+		margin:10px;
+		border:solid 2px gray;
+		padding:10px;
+	    box-shadow: 2px 4px 9px rgb(208, 202, 202);
 		-webkit-backface-visibility: hidden; 
 	  }
 	  
