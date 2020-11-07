@@ -4719,3 +4719,20 @@ a .flex-container {
 	  }
 	  
 }
+.media-featured{
+	position: relative;
+	height: 40%;
+	width: 95%;
+	z-index: 100; 
+	margin:10px;
+	border:solid 2px gray;
+	border-radius: 3%;
+	padding:10px;
+	box-shadow: 2px 4px 9px rgb(167, 159, 159);
+	-webkit-backface-visibility: hidden; 
+  }
+  .media-featured img{
+	  display: block;
+	  margin: 0 auto;
+  }
+  

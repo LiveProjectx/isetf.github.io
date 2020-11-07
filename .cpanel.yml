@@ -20,7 +20,7 @@ deployment:
     - /bin/cp news.html $DEPLOYPATH
     - /bin/cp pic.html $DEPLOYPATH
     - /bin/cp research.html $DEPLOYPATH
-    - /bin/cp services.html $DEPLOYPATH
+    - /bin/cp MediaFeatured.html $DEPLOYPATH
     - /bin/cp vid.html $DEPLOYPATH
     - /bin/cp volunteer.html $DEPLOYPATH
     - /bin/cp volunteerform.html $DEPLOYPATH
