@@ -520,15 +520,17 @@ section.bg-random {
 body {
 	background: #ffffff none repeat scroll 0 0;
     color: #888888;
-    font-family: 'Mukta', sans-serif;
-    font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
+	font-size: 16px;
 	-webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing:grayscale;
 }
 h1,h2,h3,h4,h5,h6 {
 	color: #292b2c;
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
 }
 p {
 	color:#888888;
@@ -2246,7 +2248,7 @@ ul.list-group li.list-group-item div.avatar img {
 
 .main h3 {
     margin-top: 25px;
-    font-family: sans-serif;
+    font-family: Raleway,sans-serif;
     color: darkblue;
     font-weight: bolder;
 }
