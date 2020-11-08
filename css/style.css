@@ -263,7 +263,8 @@ section.landing_section {
 	margin: 1em 0 0;
 	font-family: 'Luckiest Guy', cursive;
 	background: -webkit-linear-gradient(#3a392f, #ee0d0d);
-  	-webkit-background-clip: text;
+	  -webkit-background-clip: text;
+	  background-clip: text;
   	-webkit-text-fill-color: transparent;
 	z-index: 2;
 	font-size: xxx-large;
@@ -390,6 +391,7 @@ section.landing_section {
 	text-align: center;
 	background: -webkit-linear-gradient(#3a392f, rgb(252, 19, 19));
 	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .d_header h4{
@@ -397,6 +399,7 @@ section.landing_section {
 	text-align: center;
 	background: -webkit-linear-gradient(#3a392f, #0c64e7);
 	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: xx-large;
 }
@@ -4672,6 +4675,7 @@ a .flex-container {
   padding:10px;
   box-shadow: 2px 4px 9px rgb(208, 202, 202);
   -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden; 
 }
 
 /* end fix */
@@ -4708,6 +4712,7 @@ a .flex-container {
 		border-radius: 3%;
 	    box-shadow: 2px 4px 9px rgb(208, 202, 202);
 		-webkit-backface-visibility: hidden; 
+		backface-visibility: hidden; 
 	  }
 	  
 }
@@ -4725,6 +4730,7 @@ a .flex-container {
 		border-radius: 3%;
 	    box-shadow: 2px 4px 9px rgb(208, 202, 202);
 		-webkit-backface-visibility: hidden; 
+		backface-visibility: hidden; 
 	  }
 	  
 }
@@ -4738,6 +4744,7 @@ a .flex-container {
 	padding:10px;
 	box-shadow: 2px 4px 9px rgb(167, 159, 159);
 	-webkit-backface-visibility: hidden; 
+	backface-visibility: hidden; 
   }
   .media-featured img{
 	  display: block;
