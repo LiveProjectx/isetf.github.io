@@ -517,12 +517,10 @@ section.bg-random {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Mukta&family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Raleway&display=swap');
 body {
 	background: #ffffff none repeat scroll 0 0;
     color: #888888;
-	font-family: 'Raleway', sans-serif;
-	font-weight: normal;
-	font-size: 16px;
 	-webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing:grayscale;
@@ -530,13 +528,17 @@ body {
 h1,h2,h3,h4,h5,h6 {
 	color: #292b2c;
 	font-family: 'Raleway', sans-serif;
-	font-weight: normal;
+	font-weight: bold;
+}
+p,a,ul,ol{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
 }
 p {
-	color:#888888;
+	color:#1f1f1f;
 }
 a {
-	color: #292b2c;
+	color: #1f1f1f;
 	text-decoration: none;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
@@ -1800,7 +1802,6 @@ div#navbarSupportedContent {
 	line-height: 16px;
 	padding: 0 5px;
 	color: #fff;
-	font-weight: normal;
 }
 .nav-fixed .cart_count {
 	top: 8px;
@@ -1846,7 +1847,6 @@ div#navbarSupportedContent {
 .cart_quantity {
 	color: #ffffff;
 	display: inline-block;
-	font-weight: 500;
 }
 .cart_list {
     display: table;
@@ -2188,7 +2188,6 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 .alertbox_content *,
 .alertbox_content a {
 	color: #fff;
-	font-weight: bold;
 }
 .news_ticker a {
     padding: 0 10px;
@@ -2248,7 +2247,7 @@ ul.list-group li.list-group-item div.avatar img {
 
 .main h3 {
     margin-top: 25px;
-    font-family: Raleway,sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: darkblue;
     font-weight: bolder;
 }
@@ -4481,8 +4480,14 @@ div.mem:hover{
     border-color: white;
     position: relative;
 }
+.card-even {
+	background-color: lightseagreen;
+    margin: 20px 00 20px 0;
+    padding: 30px;
+}
 .card-even p {
-    color: white;
+	color: white;
+	font-weight: lighter;
 }
 .card-odd p {
     color: #000000;
@@ -4491,10 +4496,12 @@ div.mem:hover{
   color: #ffffff;
 }
 .card-even h5 {
-    color: #e2cf7a;
+	color: #e2cf7a;
+	font-weight: 100;
 }
 .card-odd h5 {
-    color: #ffffff;
+	color: #5c5c5c;
+	font-weight: 100;
 }
 .col-md-8.col-sm-1.info p {
     color: #000000;
@@ -4727,7 +4734,6 @@ a .flex-container {
 	width: 95%;
 	z-index: 100; 
 	margin:10px;
-	border:solid 2px gray;
 	border-radius: 3%;
 	padding:10px;
 	box-shadow: 2px 4px 9px rgb(167, 159, 159);
