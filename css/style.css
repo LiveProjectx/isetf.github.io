@@ -4739,7 +4739,7 @@ a .flex-container {
 	height: 40%;
 	width: 95%;
 	z-index: 100; 
-	margin:10px;
+	margin:10px 10px 20px 20px;
 	border-radius: 3%;
 	padding:10px;
 	-webkit-transform: scale(1);
