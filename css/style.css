@@ -4726,10 +4726,14 @@ a .flex-container {
 	height: 40%;
 	width: 95%;
 	z-index: 100; 
-	margin:10px;
+	margin:15px 15px 30px 15px;
 	border:solid 2px gray;
 	border-radius: 3%;
 	padding:10px;
+	-webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 	box-shadow: 2px 4px 9px rgb(167, 159, 159);
 	-webkit-backface-visibility: hidden; 
   }
@@ -4738,3 +4742,32 @@ a .flex-container {
 	  margin: 0 auto;
   }
   
+div.media-featured:hover{
+	position: relative;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	box-shadow: 2px 4px 9px 5px #cacaca;
+}
+
+
+#lightbox .modal-content {
+	display: inline-block;
+	text-align: center;
+	border: solid black 3px;
+  }
+  #lightbox .modal-content .modal-body img{
+	  width:100%;
+  }
+  
+  #lightbox .close {
+	opacity: 1;
+	color: rgb(255, 255, 255);
+	background-color: rgb(25, 25, 25);
+	padding: 5px 8px;
+	border-radius: 30px;
+	border: 2px solid rgb(255, 255, 255);
+	position: absolute;
+	top: -15px;
+	right: -55px;
+	z-index: 1032;
+  }
