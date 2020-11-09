@@ -44,7 +44,6 @@
 .form-payment-tax.form-payment-label > span:nth-child(1) {
     width:100%;
     max-width: 225px !important;
-    float: left;
     display: inline-block;
     word-wrap: break-word;
  }
@@ -58,7 +57,6 @@
 .form-payment-shipping.form-payment-label > span:nth-child(1){
     width:100%;
     max-width: 225px !important;
-    float: left;
     display: inline-block;
     word-wrap: break-word;
  }
@@ -261,9 +259,6 @@
     white-space: pre-wrap;
 }
 
-.form-textarea-limit{
-
-}
 .form-textarea-limit > span{
     display:inline-block;
 }
@@ -331,7 +326,6 @@ li.form-line-column + li[data-type="control_head"] {
 }
 li[data-type="control_datetime"] .form-input-wide .form-sub-label-container:nth-child(2) img{
     vertical-align: unset !important;
-    display: block;
     position: absolute;
     left: 5px;
     top: 4px;
@@ -549,10 +543,6 @@ li[data-type="control_datetime"] .form-input-wide .form-sub-label-container:nth-
     margin: 14px 0;
     display:inline-block;
 }
-.form-screenshot-img img{
-
-}
-
 .form-submit-print::-moz-focus-inner{
     padding:0px 6px;
 }
@@ -667,7 +657,6 @@ li[data-type="control_datetime"] .form-input-wide .form-sub-label-container:nth-
 }
 
 .form-label-left {
-    float:left;
     display:inline-block;
     text-align:left;
     padding:3px;
@@ -675,7 +664,6 @@ li[data-type="control_datetime"] .form-input-wide .form-sub-label-container:nth-
 }
 
 .form-label-right {
-    float:left;
     display:inline-block;
     text-align:right;
     margin-bottom:6px;
@@ -1044,10 +1032,10 @@ li.form-line-error .form-validation-error {
     -moz-border-radius-bottomleft:10px 10px;
     -moz-box-shadow:0px 5px 10px rgba(0,0,0,0.6);
     -webkit-border-bottom-right-radius:10px 10px;
+    border-bottom-right-radius:10px 10px;
     -webkit-border-bottom-left-radius:10px 10px;
+    border-bottom-left-radius:10px 10px;
     -webkit-box-shadow:0px 5px 10px rgba(0,0,0,0.6);
-    border-radius-bottom-right:10px 10px;
-    border-radius-bottom-left:10px 10px;
     box-shadow:0px 5px 10px rgba(0,0,0,0.6);
 }
 
@@ -1298,7 +1286,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0064f0', end
     color:#fff !important;
 }
 .qq-upload-fail .qq-upload-size{display:none !important;}
-.qq-upload-file {}
 .qq-upload-spinner {display:inline-block; background: url("../../images/loading.gif"); width:15px; height:15px; vertical-align:text-bottom;margin-bottom: 3px;margin-left: 2px;}
 .qq-upload-size,.qq-upload-cancel {float:right;margin-left: 4px;}
 .qq-upload-failed-text {display:none;}
@@ -1597,15 +1584,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0064f0', end
         padding: 9px 6px !important;
         background: none;
     }
-    .form-sub-label-container img[id*="pick"]{
-        /*width:25px;*/
-    }
     div.form-header-group{
         margin:0px !important;
     }
     div.form-pagebreak .form-label-left{
         display:inline-block !important;
-        float:left;
     }
     .form-submit-button, .form-submit-reset{
         font-size:18px;
@@ -1901,7 +1884,6 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 12px;
     margin-top: 12px;
     margin-left: 12px;
-    float: right;
     background: #FC7C01;
     color: white;
     line-height: 16px;

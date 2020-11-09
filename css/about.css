@@ -256,9 +256,6 @@ p.over-para {
     width: 33%;
     float: left;
   }
-  .col1:nth-of-type(n<3) {
-    clear: left;
-  }
 }
 
 
